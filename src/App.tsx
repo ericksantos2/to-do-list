@@ -1,7 +1,10 @@
+import Card from "./components/Card";
+import AppContainer from "./styles/appStyled";
+
 export default function App() {
   return (
-    <div>
-      teste
-    </div>
+    <AppContainer>
+      <Card />
+    </AppContainer>
   )
 }
