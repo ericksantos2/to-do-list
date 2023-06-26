@@ -9,11 +9,11 @@ export const CardDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: var(--tamanho);
+  min-height: var(--tamanho);
   padding: var(--padding);
   width: var(--tamanho);
 
-  > h1 {
+  > h1, > label {
     font-size: 21px;
     font-weight: bold;
   }
@@ -28,9 +28,23 @@ export const ListaTodo = styled.ul`
     align-items: center;
     display: flex;
     gap: 0.33rem;
+    position: relative;
     
     > label {
       font-weight: 400;
+    }
+
+    > button {
+      background-color: transparent;
+      border: none;
+      color: #646464;
+      padding: 0;
+      position: absolute;
+      right: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `
