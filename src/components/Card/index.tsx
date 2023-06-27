@@ -4,6 +4,7 @@ import { BsFillTrashFill } from 'react-icons/bs';
 import { RootState } from '../../store';
 import { deleteTodoItem, toggleCheck } from '../../store/reducers/todoList';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
+import { useEffect } from 'react';
 
 export default function Card() {
   const dispatch = useDispatch();
@@ -12,6 +13,13 @@ export default function Card() {
   const handleDispatch = (action: ActionCreatorWithPayload<number, string>, index: number) => () => {
     dispatch(action(index));
   }
+
+  useEffect(() => {
+    const todoListLocal = localStorage.getItem('todolist')
+    if (!todoListLocal || (todoListLocal && todoList !== JSON.parse(todoListLocal))) {
+      localStorage.setItem('todolist', JSON.stringify(todoList));
+    }
+  }, [todoList])
 
   return (
     <CardDiv>

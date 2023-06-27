@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { TodoItem } from '../../interfaces/todoItem';
 
-const initialState: TodoItem[] = [];
+const initialState: TodoItem[] = JSON.parse(localStorage.getItem('todolist') || '[]') || [];
 
 const todoListSlice = createSlice({
   name: 'todolist',
