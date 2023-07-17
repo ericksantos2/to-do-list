@@ -32,6 +32,9 @@ export const ListaTodo = styled.ul`
     
     > label {
       font-weight: 400;
+      > a {
+        color: #4242f0;
+      }
     }
 
     > button {
